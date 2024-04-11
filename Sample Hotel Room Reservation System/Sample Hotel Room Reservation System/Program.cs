@@ -7,21 +7,22 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<Userservice>();
 
 // Add ASP.NET Identity services
 builder.Services.AddDbContext<HotelDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("HotelRoomDatabaseConnection")));
 
-builder.Services.AddIdentity<User, IdentityRole>(options =>
-{
-    options.Password.RequireDigit = true;
-    options.Password.RequireLowercase = true;
-    options.Password.RequireUppercase = true;
-    options.Password.RequireNonAlphanumeric = true;
-    options.Password.RequiredLength = 8;
-})
-    .AddEntityFrameworkStores<HotelDbContext>()
-    .AddDefaultTokenProviders();
+// builder.Services.AddIdentity<User, IdentityRole>(options =>
+// {
+//     options.Password.RequireDigit = true;
+//     options.Password.RequireLowercase = true;
+//     options.Password.RequireUppercase = true;
+//     options.Password.RequireNonAlphanumeric = true;
+//     options.Password.RequiredLength = 8;
+// })
+//     .AddEntityFrameworkStores<HotelDbContext>()
+//     .AddDefaultTokenProviders();
 
 builder.Services.AddSession(options =>
 {

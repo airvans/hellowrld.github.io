@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Sample_Hotel_Room_Reservation_System.Models
 {
-    public class User : IdentityUser
+    public class User
     {
         public int UserId { get; set; }
 
