@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:Sample_Hotel_Room_Reservation_SystemContextConnection"
+    }
+  }
+}
